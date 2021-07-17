@@ -8,8 +8,4 @@ def home_view(request):
     context = {
         'title':title,
     }
-    return render(request, 'home.html', context)
-
-def product_view(request):
-    qs = Phone.objects.all()
-    return render(request, 'home.html', {'qs':qs})
+    return render(request, 'store/home.html', context)

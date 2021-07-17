@@ -53,14 +53,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'samsung_store.urls'
 
-TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'templates'),
-)
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'),
+                 os.path.join(BASE_DIR, 'app', 'templates', 'app')
+                 ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
