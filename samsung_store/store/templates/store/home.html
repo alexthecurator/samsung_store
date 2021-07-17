@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "index.html" %}
 
 {% block title %}
 Home
@@ -21,14 +21,15 @@ Home
                 </div>
                 <div class="p-xl-2">
                     <div class="theButton">
-                        <button type="button" name="Discover" id="Discover" class="btn-space">Discover</button>
+                        <button type="button" name="Discover" id="Discover" class="btn-space"><a href="showcase">Discover</a></button>
                     </div>
                 </div>
             </div>
             <div class="col-xl-6">
-                <div class="p-xl-2 mx-xl-5">
+                <div class="mx-xl-5">
                     <div class="thePhone">
-                        <img src="/assets/phones/double-samsung.png" />
+                        {% load static %}
+                        <img width="400px" src="{% static 'media/phones/double-samsung.png'%}" />
                     </div>
                 </div>
             </div>

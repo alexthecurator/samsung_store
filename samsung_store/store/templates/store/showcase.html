@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "index.html" %}
 
 {% block title %}
 Home
@@ -6,12 +6,18 @@ Home
 
 {% block content %}
 <div class="container">
+    <div class="container">
+        <div class="white">
+            <h1> Our Products</h1>        
+        </div>
+    </div>
     <div class="center-middle">
         <div class="row d-xl-flex justify-content-center">
-            <div class="col-xl-6">
+            <div class="col-xl-3">
                 <div class="p-xl-2 mx-xl-5">
                     <div class="thePhone">
-                        <img src="/assets/phones/double-samsung.png" />
+                        {% load static %}
+                        <img width="220px" src="{% static 'media/phones/samsung-galaxy.png'%}" />
                     </div>
                 </div>
             </div>
@@ -28,11 +34,22 @@ Home
                 </div>
                 <div class="p-xl-2">
                     <div class="theButton">
-                        <button type="button" name="Discover" id="Discover" class="btn-space">Discover</button>
+                        <button type="button" name="Discover" id="Discover" class="btn-space">Buy</button>
                     </div>
                 </div>
             </div>
+            
         </div>
+    </div>
+</div>
+
+<div class="theHomeBtn-wrap">
+    <div class="p-0 m-0">
+        <a href="/">
+            <div class="theHomeBtn">
+                <i class="fi-rr-home white"></i>
+            </div>
+        </a>
     </div>
 </div>
 {% endblock content %}

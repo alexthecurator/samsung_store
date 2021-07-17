@@ -4,7 +4,19 @@ body {
     margin: 0;
     top: 0;
     left: 0;
-    background-image: linear-gradient(38deg, #070707, #282828);
+    background: linear-gradient(38deg, #070707, #282828);
+}
+
+ul {
+    list-style: none;
+}
+
+a,
+a:hover,
+a:active,
+a:link {
+    text-decoration: none;
+    color: inherit;
 }
 
 .white {
@@ -18,7 +30,7 @@ body {
 } */
 
 .center-middle {
-    transform: translateY(50%);
+    transform: translateY(25%);
 }
 
 .theDetails {
@@ -36,7 +48,8 @@ body {
     font-size: 14px;
 }
 
-.theButton button:hover {
+.theButton button:hover,
+.theButton button:active {
     background-color: #fff;
     color: #282828;
     transition: all .4s ease-in-out;
@@ -44,4 +57,27 @@ body {
 
 .btn-space {
     padding: 10px 30px;
+}
+
+.theHomeBtn {
+    background-color: #282828;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    padding: 1rem 2.2px;
+    border: 1px solid rgba(255, 255, 255, .2);
+}
+
+.theHomeBtn-wrap {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 999999;
+    transform: translate(48%, 35%);
+}
+
+.theHomeBtn i {
+    position: relative;
+    font-size: 1.6rem;
+    margin: 20px;
 }
