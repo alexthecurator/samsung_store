@@ -6,39 +6,72 @@ Home
 
 {% block content %}
 <div class="container">
-    <div class="container">
-        <div class="white">
-            <h1> Our Products</h1>        
+    <div class="container my-xl-5">
+        <div class="theHeading white">
+            <h1> Our Latest Products</h1>        
         </div>
     </div>
-    <div class="center-middle">
-        <div class="row d-xl-flex justify-content-center">
-            <div class="col-xl-3">
-                <div class="p-xl-2 mx-xl-5">
-                    <div class="thePhone">
-                        {% load static %}
-                        <img width="220px" src="{% static 'media/phones/samsung-galaxy.png'%}" />
+    <div class="container">
+        <div class="container">
+            {% for phones in phone %}
+            <div class="theCard">
+                <div class="p-xl-5">
+                    <div class="row d-xl-flex justify-content-center">
+                        <div class="col-xl-4">
+                            <div class="p-xl-2 mx-xl-5">
+                                <div class="thePhone">
+                                    {% load static %}
+                                    <img width="220px" src="{% static 'media/phones/samsung-galaxy.png'%}" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="p-xl-2">
+                                <div class="theHeading white">
+                                    <h2>{{phones.name}}</h2>
+                                </div>
+                            </div>
+                            <div class="p-xl-2"> 
+                                <div class="theCardDetails white">
+                                    <p>{{phones.about}}</p>
+                                </div>
+                            </div>
+                            <div class="p-xl-2">
+                                <div class="row">
+                                    <div class="col-xl-2">
+                                        <div class="white">
+                                            <h4>{{phones.price}}$</h4>
+                                        </div>
+                                        <div class="theButton-cta">
+                                            <button type="button" name="Discover" id="Discover" class="btn-space">
+                                                <div class="d-flex flex-row">
+                                                    <small>Buy</small> 
+                                                    <i class="fi-rr-shop"></i>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 mx-xl-3">
+                                        <div class="d-inline align-baseline">
+                                            <div class="py-xl-1 white">
+                                                <h6>Like it, Rate it</h6>
+                                            </div>
+                                            <div class="d-flex flex-row">
+                                                <i class="fi-rr-star white px-xl-1"></i>
+                                                <i class="fi-rr-star white px-xl-1"></i>
+                                                <i class="fi-rr-star white px-xl-1"></i>
+                                                <i class="fi-rr-star white px-xl-1"></i>
+                                                <i class="fi-rr-star white px-xl-1"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-6">
-                <div class="p-xl-2">
-                    <div class="theHeading white">
-                        <h1>Seamless Design, Powerful Technology</h1>
-                    </div>
-                </div>
-                <div class="p-xl-2">
-                    <div class="theDetails white">
-                        <p>If you are looking to transform the ordinary into the extraordinary, the Galaxy S series has you covered. Revolutionary 8K cameras, all-day power and hyper-fast streaming just got a makeover for 2021</p>
-                    </div>
-                </div>
-                <div class="p-xl-2">
-                    <div class="theButton">
-                        <button type="button" name="Discover" id="Discover" class="btn-space">Buy</button>
-                    </div>
-                </div>
-            </div>
-            
+            {% endfor %}
         </div>
     </div>
 </div>

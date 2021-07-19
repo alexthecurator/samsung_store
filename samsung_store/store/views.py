@@ -12,7 +12,8 @@ def home_view(request):
 
 def showcase_view(request):
     title = "Showcase"
+    phone = Phone.objects.all()
     context = {
         'title':title,
     }
-    return render(request, 'store/showcase.html', context)
+    return render(request, 'store/showcase.html', {'phone':phone})

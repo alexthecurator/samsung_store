@@ -33,14 +33,19 @@ a:link {
     transform: translateY(25%);
 }
 
-.theDetails {
+.theDetails,
+.theCardDetails {
     font-family: 'Samsung Sharp Sans', sans-serif;
     font-weight: 400;
     line-height: 25px;
 }
 
-.theButton button {
-    background-color: #282828;
+.theCardDetails {
+    font-size: 14px;
+}
+
+.theButton button,
+.theButton-cta button {
     border: none;
     border-radius: 5px;
     color: #fff;
@@ -48,8 +53,18 @@ a:link {
     font-size: 14px;
 }
 
+.theButton button {
+    background-color: #282828;
+}
+
+.theButton-cta button {
+    background-color: #070707;
+}
+
 .theButton button:hover,
-.theButton button:active {
+.theButton-cta button:hover,
+.theButton button:active,
+.theButton-cta button:active {
     background-color: #fff;
     color: #282828;
     transition: all .4s ease-in-out;
@@ -73,11 +88,19 @@ a:link {
     height: 100%;
     position: fixed;
     z-index: 999999;
-    transform: translate(48%, 35%);
+    transform: translate(48%, 20%);
 }
 
 .theHomeBtn i {
     position: relative;
     font-size: 1.6rem;
     margin: 20px;
+}
+
+
+/* The Card */
+
+.theCard {
+    background-color: #282828;
+    border-radius: 12px;
 }
