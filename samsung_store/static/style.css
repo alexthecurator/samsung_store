@@ -5,6 +5,11 @@ body {
     top: 0;
     left: 0;
     background: linear-gradient(38deg, #070707, #282828);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
 }
 
 ul {
