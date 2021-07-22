@@ -7,8 +7,9 @@ class Phone(models.Model):
     # store = models.ForeignKey('store.Store', on_delete=models.CASCADE, blank=unique_id())
     name = models.CharField(max_length=100)
     about = models.TextField(max_length=250)
-    image = models.FileField(upload_to='samsung_store/assets/phones', max_length=100)
+    image = models.FileField(upload_to='assets/phones', max_length=100)
     rating = models.IntegerField(blank=True)
+    store = models.ForeignObject(max_length=)
     price = models.FloatField(max_length=255, blank=True)
     date = models.DateTimeField(auto_now=True)
     

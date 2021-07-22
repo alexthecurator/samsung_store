@@ -74,12 +74,16 @@ a:link {
 
 .theButton button:hover,
 .theButton-cta button:hover,
-.theHomeBtn:hover,
 .theButton button:active,
-.theButton-cta button:active,
-.theHomeBtn:active {
+.theButton-cta button:active {
     background-color: #fff;
     color: #282828;
+    transition: all .4s ease-in-out;
+}
+
+.theHomeBtn:hover,
+.theHomeBtn:active {
+    background-color: #6d6d6d;
     transition: all .4s ease-in-out;
 }
 
