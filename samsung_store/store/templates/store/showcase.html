@@ -29,7 +29,7 @@ Showcase
                                         <div class="p-xl-2 mx-xl-5">
                                             <div class="thePhone">
                                                 {% load static %}
-                                                <img width="220px" src="{% static 'media/phones/samsung-galaxy.png'%}" />
+                                                <img width="220px" src="{{phones.image}}" />
                                             </div>
                                         </div>
                                     </div>
@@ -54,7 +54,7 @@ Showcase
                                                         <button type="button" name="Discover" id="Discover" class="btn-space">
                                                             <div class="d-flex flex-row">
                                                                 <small>Buy</small> 
-                                                                <i class="fi-rr-shop ps-xl-2"></i>
+                                                                <i class="fi-sr-shopping-cart ps-xl-2"></i>
                                                             </div>
                                                         </button>
                                                     </div>
@@ -62,13 +62,12 @@ Showcase
                                                 <div class="col-xl-4 mx-xl-4">
                                                     <div class="d-inline align-baseline">
                                                         <div class="py-xl-1 white">
-                                                            <h6>Like it, Rate it</h6>
+                                                            <h6>Like it? Rate it</h6>
                                                         </div>
                                                         <div class="d-flex flex-row">
-                                                        
-                                                            <i class="fi-rr-star white px-xl-1"></i>
-                                                            <i class="fi-rr-star white px-xl-1"></i>
-                                                            <i class="fi-rr-star white px-xl-1"></i>
+                                                            <i class="fi-sr-star white px-xl-1"></i>
+                                                            <i class="fi-sr-star white px-xl-1"></i>
+                                                            <i class="fi-sr-star white px-xl-1"></i>
                                                             <i class="fi-rr-star white px-xl-1"></i>
                                                             <i class="fi-rr-star white px-xl-1"></i>
                                                         </div>
@@ -98,7 +97,7 @@ Showcase
     <div class="p-0 m-0">
         <a href="/">
             <div class="theHomeBtn">
-                <i class="fi-rr-home white"></i>
+                <i class="fi-sr-home white"></i>
             </div>
         </a>
     </div>

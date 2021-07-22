@@ -5,6 +5,7 @@ body {
     top: 0;
     left: 0;
     background: linear-gradient(38deg, #070707, #282828);
+    background-blend-mode: multiply multiply;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -38,6 +39,11 @@ a:link {
     transform: translateY(25%);
 }
 
+.brand {
+    width: 100px;
+    height: 100px;
+}
+
 .theDetails,
 .theCardDetails {
     font-family: 'Samsung Sharp Sans', sans-serif;
@@ -68,8 +74,10 @@ a:link {
 
 .theButton button:hover,
 .theButton-cta button:hover,
+.theHomeBtn:hover,
 .theButton button:active,
-.theButton-cta button:active {
+.theButton-cta button:active,
+.theHomeBtn:active {
     background-color: #fff;
     color: #282828;
     transition: all .4s ease-in-out;
@@ -85,15 +93,13 @@ a:link {
     height: 70px;
     border-radius: 50%;
     padding: 1rem 2.2px;
-    border: 1px solid rgba(255, 255, 255, .2);
 }
 
 .theHomeBtn-wrap {
-    width: 100%;
-    height: 100%;
     position: fixed;
     z-index: 999999;
-    transform: translate(48%, 20%);
+    bottom: 5%;
+    left: 50%;
 }
 
 .theHomeBtn i {
