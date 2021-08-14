@@ -29,6 +29,7 @@ class Store(models.Model):
     
     def __str__(self):
         return f"Store: {self.name},  Date: {self.date}"    
+        
 class Buyers(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
