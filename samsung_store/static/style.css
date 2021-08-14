@@ -29,6 +29,10 @@ a:link {
     color: #fbfbfb;
 }
 
+.black {
+    color: #282828;
+}
+
 
 /* .theHeading {
     font-family: 'SamsungOne', sans-serif;
@@ -118,4 +122,17 @@ a:link {
 .theCard {
     background-color: #282828;
     border-radius: 12px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+/* Firefox */
+
+input[type=number] {
+    -moz-appearance: textfield;
 }

@@ -5,6 +5,54 @@ Showcase
 {% endblock title %}
 
 {% block content %}
+
+{% for phones in phone %}
+{% cycle 'name' as name silent %}
+<div class="modal fade position-fixed" id="purchase" tabindex="99" aria-labelledby="purchaseLabel" aria-hidden="true" data-bs-backdrop="static">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Purchase {{phones.name}} for {{phones.price}} $</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+        <form>
+            <div class="modal-body d-flex justify-content-center">
+                <div class="col-10">
+
+                    <div class="input-group my-4">
+                        <span class="input-group-text">Card</span>
+                        <input type="number" aria-label="Card" class="form-control" pattern="{1-9}[8]" required>
+                    </div>
+
+                    <div class="input-group my-4">
+                        <span class="input-group-text">Csv | Exp</span>
+                        <input type="number" aria-label="Csv" class="form-control" required>
+                        <input type="number" aria-label="Exp" class="form-control" required>
+                    </div>
+
+                    <div class="input-group my-4">
+                        <input type="text" class="form-control" placeholder="Account email" aria-label="Account email" aria-describedby="basic-addon2" required>
+                        <span class="input-group-text" id="basic-addon2">@example.com</span>
+                    </div>
+
+                    <div class="input-group my-4">
+                        <input type="password" class="form-control" placeholder="Account password" aria-label="Account password" aria-describedby="basic-addon2" required>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <div class="theButton-cta">
+                    <button type="submit" class="btn-space" name="purchase">Purchase</button>
+                </div>
+            </div>
+        </form>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
 <div class="container-fluid">
     <div class="container my-xl-5">
         <div class="theHeading white">
@@ -46,7 +94,7 @@ Showcase
                                                         <h3>{{phones.price}}$</h3>
                                                     </div>
                                                     <div class="theButton-cta">
-                                                        <button type="button" name="Discover" id="Discover" class="btn-space">
+                                                        <button type="button" name="Discover" id="Discover" class="btn-space" data-bs-toggle="modal" data-bs-target="#purchase">
                                                             <div class="d-flex flex-row">
                                                                 <small>Buy</small> 
                                                                 <i class="fi-sr-shopping-cart ps-xl-2"></i>
@@ -97,6 +145,9 @@ Showcase
         </a>
     </div>
 </div>
+
+<!-- Modal -->
+
 
 <script type="text/javascript" rel="javascript">
 var phone = document.getElementById('showCard');
