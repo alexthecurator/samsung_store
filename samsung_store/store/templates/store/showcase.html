@@ -4,6 +4,8 @@
 Showcase
 {% endblock title %}
 
+{% load crispy_forms_tags %}
+
 {% block content %}
 
 {% for phones in phone %}
@@ -15,30 +17,33 @@ Showcase
         <h5 class="modal-title" id="exampleModalLabel">Purchase {{phones.name}} for {{phones.price}} $</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-        <form action="/purchasing/" method="post">
+        <form action="" method="post">
             {% csrf_token %}
-            {{ form }}
             <div class="modal-body d-flex justify-content-center">
                 <div class="col-10">
-
                     <div class="input-group my-4">
-                        <span class="input-group-text">Card</span>
-                        <input type="number" aria-label="Card" class="form-control" pattern="{1-9}[8]" name="card" required>
+                        <span class="input-group-text" id="basic-addon2">Card</span>
+                        {{ order.card|as_crispy_field }}
+                        {% comment %} <input type="number" aria-label="Card" class="form-control" pattern="{1-9}[8]" name="card" required> {% endcomment %}
                     </div>
 
                     <div class="input-group my-4">
-                        <span class="input-group-text">Csv | Exp</span>
-                        <input type="number" aria-label="Csv" class="form-control" pattern="{1-9}[3]" required>
-                        <input type="date" aria-label="Exp" class="form-control" required>
+                        <span class="input-group-text" id="basic-addon2">Csv | Exp</span>
+                        {{ order.csv|as_crispy_field }}
+                        {{ order.exp|as_crispy_field }}
+                        {% comment %} <input type="number" aria-label="Csv" class="form-control" pattern="{1-9}[3]" card="csv" required>
+                        <input type="date" aria-label="Exp" class="form-control" name="exp" required> {% endcomment %}
                     </div>
 
                     <div class="input-group my-4">
-                        <input type="text" class="form-control" placeholder="Account email" aria-label="Account email" aria-describedby="basic-addon2" required>
+                        {{ order.email|as_crispy_field }}
+                        {% comment %} <input type="text" class="form-control" placeholder="Account email" aria-label="Account email" aria-describedby="basic-addon2" name="email" required> {% endcomment %}
                         <span class="input-group-text" id="basic-addon2">@example.com</span>
                     </div>
 
                     <div class="input-group my-4">
-                        <input type="password" class="form-control" placeholder="Account password" aria-label="Account password" aria-describedby="basic-addon2" autocomplete="password" required>
+                        {{ order.password|as_crispy_field }}
+                        {% comment %} <input type="password" class="form-control" placeholder="Account password" aria-label="Account password" aria-describedby="basic-addon2" autocomplete="password" name="password" required> {% endcomment %}
                     </div>
                     
                 </div>
@@ -46,7 +51,7 @@ Showcase
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                 <div class="theButton-cta">
-                    <button type="submit" class="btn-space" name="purchase">Purchase</button>
+                    <button type="submit" class="btn-space">Purchase</button>
                 </div>
             </div>
         </form>

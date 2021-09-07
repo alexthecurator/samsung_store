@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseNotFound
 from .models import Phone, Store
-from .forms import Purchasing
+from .forms import Purchase
 from globalpayments.api import ServicesConfig, ServicesContainer
 # Create your views here.
 
@@ -17,12 +17,16 @@ def showcase_view(request):
     phone = Phone.objects.all()
     
     if request.method == 'POST':
-        form = Purchasing(request.POST)
-        if form.is_valid():
-            pass
+        order = Purchase(request.POST)
+        print(order)
+    else:
+        error = "No post found"
+        print(error)
         
     context = {
         'title':title,
         'phone':phone,
+        'order':order,
     }
+    
     return render(request, 'store/showcase.html', context)
