@@ -138,3 +138,6 @@ MEDIAFILES_DIRS = [ ## this is a list so we can add more files
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STRIPE_PUBLIC_KEY = 'pk_test_51JX0rCIgX67eTaeLNH0doawAyQOOlLyz5ld19CHk2F9d2PW8RrFB9aF5GTNuOqrMmpQYnA52Hf7zVIrTp071URIT0077ISbxgJ'
+STRIPE_SECRET_KEY = 'sk_test_51JX0rCIgX67eTaeL6OEkEEPfhYk0UWlzCvjxgLFZwg1Z41iRj6rGS5azXlCuIwtDPwJI40YMPOoALScGpT24LrDB00SvhWUbNg'
