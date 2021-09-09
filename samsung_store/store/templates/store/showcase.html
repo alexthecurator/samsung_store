@@ -23,26 +23,26 @@ Showcase
                 <div class="col-10">
                     <div class="input-group my-4">
                         <span class="input-group-text" id="basic-addon2">Card</span>
-                        {{ order.card|as_crispy_field }}
+                        {{ order.card }}
                         {% comment %} <input type="number" aria-label="Card" class="form-control" pattern="{1-9}[8]" name="card" required> {% endcomment %}
                     </div>
 
                     <div class="input-group my-4">
                         <span class="input-group-text" id="basic-addon2">Csv | Exp</span>
-                        {{ order.csv|as_crispy_field }}
-                        {{ order.exp|as_crispy_field }}
+                        {{ order.csv }}
+                        {{ order.exp }}
                         {% comment %} <input type="number" aria-label="Csv" class="form-control" pattern="{1-9}[3]" card="csv" required>
                         <input type="date" aria-label="Exp" class="form-control" name="exp" required> {% endcomment %}
                     </div>
 
                     <div class="input-group my-4">
-                        {{ order.email|as_crispy_field }}
+                        {{ order.email }}
                         {% comment %} <input type="text" class="form-control" placeholder="Account email" aria-label="Account email" aria-describedby="basic-addon2" name="email" required> {% endcomment %}
                         <span class="input-group-text" id="basic-addon2">@example.com</span>
                     </div>
 
                     <div class="input-group my-4">
-                        {{ order.password|as_crispy_field }}
+                        {{ order.password }}
                         {% comment %} <input type="password" class="form-control" placeholder="Account password" aria-label="Account password" aria-describedby="basic-addon2" autocomplete="password" name="password" required> {% endcomment %}
                     </div>
                     

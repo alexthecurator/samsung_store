@@ -15,10 +15,17 @@ def home_view(request):
 def showcase_view(request):
     title = "Showcase"
     phone = Phone.objects.all()
+    order = Purchase(request.POST)
     
     if request.method == 'POST':
         order = Purchase(request.POST)
-        print(order)
+        if order.is_valid():
+            card = order.cleaned_data['card']
+            csv= order.cleaned_data['csv']
+            exp = order.cleaned_data['exp']
+            email = order.cleaned_data['email']
+            password = order.cleaned_data['password']
+
     else:
         error = "No post found"
         print(error)
