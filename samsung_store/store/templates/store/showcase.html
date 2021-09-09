@@ -10,11 +10,11 @@ Showcase
 
 {% for phones in phone %}
 {% cycle 'name' as name silent %}
-<div class="modal fade position-fixed" id="purchase-{{phones.id}}" tabindex="99" aria-labelledby="purchaseLabel" aria-hidden="true" data-bs-backdrop="static">
+<div class="modal fade position-fixed" id="order-{{phones.phone_id}}" tabindex="99" aria-labelledby="purchaseLabel" aria-hidden="true" data-bs-backdrop="static">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Purchase {{phones.name}} for {{phones.price}} $</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Purchase {{phones.name}} for {{phones.price}}$</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
         <form action="" method="post">
@@ -102,12 +102,18 @@ Showcase
                                                         <h3>{{phones.price}}$</h3>
                                                     </div>
                                                     <div class="theButton-cta">
-                                                        <button type="button" name="Discover" id="Discover" class="btn-space" data-bs-toggle="modal" data-bs-target="#purchase-{{phones.id}}">
+                                                        <button type="button" name="Discover" id="Discover" class="btn-space" data-bs-toggle="modal" data-bs-target="#order-{{phones.phone_id}}">
                                                             <div class="d-flex flex-row">
                                                                 <small>Buy</small> 
                                                                 <i class="fi-sr-shopping-cart ps-xl-2"></i>
                                                             </div>
                                                         </button>
+                                                        {% comment %} <button type="button" name="Discover" id="Discover" class="btn-space" data-bs-toggle="modal" data-bs-target="#order-{{phones.phone_id}}" onclick=location.href='showcase/{{phones.phone_id}}'>
+                                                            <div class="d-flex flex-row">
+                                                                <small>Buy</small> 
+                                                                <i class="fi-sr-shopping-cart ps-xl-2"></i>
+                                                            </div>
+                                                        </button> {% endcomment %}
                                                     </div>
                                                 </div>
                                                 <div class="col-xl-4 mx-xl-4">
@@ -154,13 +160,15 @@ Showcase
     </div>
 </div>
 
-<!-- Modal -->
-
 <script type="text/javascript" rel="javascript">
     var phone = document.getElementById('showCard');
     while(phone !== null) {
         phone.classList.add("active");
         break;
     }
+</script>
+
+<script>
+
 </script>
 {% endblock content %}

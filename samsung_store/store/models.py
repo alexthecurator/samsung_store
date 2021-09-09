@@ -4,13 +4,18 @@ from django.utils import timezone
 
 # Create your models here.
 class Phone(models.Model):
-    # store = models.ForeignKey('store.Store', on_delete=models.CASCADE, blank=unique_id())
+    phone_id = models.CharField(max_length=150, blank =True)
     name = models.CharField(max_length=100)
     about = models.TextField(max_length=250)
     image = models.FileField(upload_to='assets/phones', max_length=100)
     rating = models.IntegerField(blank=True)
     price = models.FloatField(max_length=255, blank=True)
     date = models.DateTimeField(auto_now=True)
+    
+    def save(self, *args, **kwargs):
+        if self.phone_id == "":
+            self.phone_id = unique_id()
+        return super().save(*args, **kwargs)
     
     def __str__(self):
         return f"Name: {self.name},  Ratings: {self.rating} stars,  Price: {self.price}$"
